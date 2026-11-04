@@ -27,6 +27,22 @@ Manual sensor scanning · Native target following · Fullscreen & PiP · Game-st
 | Move the pod in **Scan**, or **Follow** native selected targets | Direct **fullscreen**, optional **picture-in-picture** and cockpit display options | Green HUD symbology, known-contact markers and native selected-target information |
 | Hold a valid terrain point with **AREA** ground stabilization | Switch the owned camera between **COLOR** and **IR (GAME)** | Keep camera view state within the same valid aircraft/session |
 
+## HUD gallery
+
+<table>
+<tr><th>TGP symbology</th><th>Selected-missile symbology</th></tr>
+<tr>
+<td><img src="docs/assets/tgp-hud-illustration.png" alt="TGP HUD illustration with crosshair, selection brackets, weapon name and range readout" width="100%"></td>
+<td><img src="docs/assets/missile-hud-illustration.png" alt="Selected-missile HUD illustration with a long split crosshair, three lower reference ticks and TARGET SELECTED label" width="100%"></td>
+</tr>
+<tr>
+<td>HUD illustration: compact targeting brackets, range, native weapon name and view information.</td>
+<td>HUD illustration: selected surface-missile presentation with long split crosshair and lower reference ticks. TARGET SELECTED is selection, not seeker lock; the ticks are viewing references, not a launch-range scale.</td>
+</tr>
+</table>
+
+These two images isolate the display graphics on a plain background. The full gameplay photo appears above; the settings layout preview is in the tutorial below.
+
 IR (GAME) uses the game's presentation, not temperature-based thermal sensing. Contact markers and selection brackets do not prove optical visibility or weapon lock. TGP by itself does not fly or stabilize the aircraft.
 
 ## Download
@@ -220,22 +236,6 @@ This extra confirmation is not required for mouse scanning, ScanFollow or option
 | **Cyan square** | Known friendly contact, display-only |
 
 Normal manual Scan reaches up to **135° left or right of the aircraft nose**, with the rear **90° sector blocked**. Ground hold is a geometric terrain reference, not moving-object image tracking. SEL range/grid and weapon advice refer to native selected targets, not necessarily the reticle point.
-
-## HUD gallery
-
-<table>
-<tr><th>TGP symbology</th><th>Selected-missile symbology</th></tr>
-<tr>
-<td><img src="docs/assets/tgp-hud-illustration.png" alt="TGP HUD illustration with crosshair, selection brackets, weapon name and range readout" width="100%"></td>
-<td><img src="docs/assets/missile-hud-illustration.png" alt="Selected-missile HUD illustration with a long split crosshair, three lower reference ticks and TARGET SELECTED label" width="100%"></td>
-</tr>
-<tr>
-<td>HUD illustration: compact targeting brackets, range, native weapon name and view information.</td>
-<td>HUD illustration: selected surface-missile presentation with long split crosshair and lower reference ticks. TARGET SELECTED is selection, not seeker lock; the ticks are viewing references, not a launch-range scale.</td>
-</tr>
-</table>
-
-These two images isolate the display graphics on a plain background. The full gameplay photo and settings layout preview appear above.
 
 ## Troubleshooting
 
