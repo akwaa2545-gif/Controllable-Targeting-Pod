@@ -19,6 +19,11 @@
   ],
   "bundled_harmony_version": "2.9.0.0",
   "supported_context": "offline local cockpit",
-  "optional_companion": "Exact supported Observer 0.5.7 for shared menu and paired features; not included",
-  "provenance_note": "Unchanged TargetingPodDisplay.dll from the source/build/test-verified 0.1.17 candidate. This packaging change adds no live-game validation."
+  "provenance_note": "Unchanged TargetingPodDisplay.dll from the source/build/test-verified 0.1.17 candidate. This packaging change adds no live-game validation.",
+  "shared_panel_in_standalone_dll": false,
+  "configuration_options": [
+    "Config file",
+    "Optional ConfigurationManager",
+    "Optional shared-host integration"
+  ]
 }

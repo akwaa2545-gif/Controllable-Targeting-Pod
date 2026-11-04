@@ -21,7 +21,7 @@ class Tests(unittest.TestCase):
  def test_versions_limits_and_defaults_are_visible(self):
   p=ROOT/'docs/index.html'; self.assertTrue(p.exists(),'Website not implemented')
   t=p.read_text()
-  for phrase in ['0.1.17','0.5.7','0.34.6','5.4.23.5','5.4.23.6','experimental','not live-game','None','Layout preview','HUD illustration','Enabled','false']:
+  for phrase in ['0.1.17','0.34.6','5.4.23.5','5.4.23.6','experimental','not live-game','None','Layout preview','HUD illustration','Enabled','false']:
    self.assertIn(phrase,t)
  def test_release_hashes(self):
   for file,sha in {'TargetingPodDisplay.dll':'5e8ca78f9a11c90539eef3193a637d4e864ca1b62f39a0012fe193be0403f7b5'}.items():
@@ -50,4 +50,20 @@ class Tests(unittest.TestCase):
   self.assertIn(info['sha256'],s)
   self.assertEqual(info['distribution'],'TGP-only')
   self.assertFalse(info['runtime_validated'])
+ def test_product_docs_show_all_images_and_settings_guide(self):
+  readme=(ROOT/'README.md').read_text(); html=(ROOT/'docs/index.html').read_text()
+  for content in [readme,html]:
+   self.assertNotIn('Observer',content)
+   self.assertNotIn('User-provided in-game screenshot. This image is not validation of the current experimental build.',content)
+   for name in ['tgp-in-game.jpg','settings-layout-preview.png','tgp-hud-illustration.png','missile-hud-illustration.png']:
+    self.assertIn(name,content)
+   self.assertIn('TGP_SETTINGS.md',content)
+  guide=ROOT/'docs/guides/TGP_SETTINGS.md'
+  self.assertTrue(guide.is_file())
+  content=guide.read_text()
+  self.assertNotIn('Observer',content)
+  for phrase in ['Alone','Combine','Save','AftermathSeconds','0–10','PiPEnabled','does not supply the shared F8 panel','28%','40%']:
+   self.assertIn(phrase,content)
+  for link in re.findall(r'\]\(([^)]+)\)',content):
+   if not link.startswith(('https://','#')): self.assertTrue((guide.parent/link).is_file(),link)
 if __name__=='__main__': unittest.main()

@@ -6,20 +6,19 @@
 
 Manual sensor scanning · Native target following · Fullscreen & PiP · Game-style IR
 
-**TGP 0.1.17** &nbsp; • &nbsp; **Nuclear Option 0.34.6** &nbsp; • &nbsp; **Experimental**
+**TGP 0.1.17** &nbsp; • &nbsp; **Nuclear Option 0.34.6** &nbsp; • &nbsp; **Windows · BepInEx 5**
 
 ### [↓ Download TargetingPodDisplay.dll](https://raw.githubusercontent.com/akwaa2545-gif/Controllable-Targeting-Pod/main/docs/downloads/TargetingPodDisplay.dll)
 
-[Install](#installation) &nbsp; / &nbsp; [Configure](#first-time-setup) &nbsp; / &nbsp; [Controls](#controls) &nbsp; / &nbsp; [Troubleshooting](#troubleshooting)
+[Install](#installation) &nbsp; / &nbsp; [Settings tutorial](#settings-panel-tutorial) &nbsp; / &nbsp; [Controls](#controls) &nbsp; / &nbsp; [Troubleshooting](#troubleshooting)
 
 <img src="docs/assets/tgp-in-game.jpg" alt="In-game TGP view over an airfield with green Scan symbology, red hostile diamonds and white selection brackets" width="100%">
 
-<sub>User-provided in-game screenshot. This image is not validation of the current experimental build.</sub>
+<sub>Fullscreen Scan over an airfield: red diamonds identify known hostile contacts, white brackets show selection, and green symbology reports the sensor view.</sub>
 
 </div>
 
-> [!IMPORTANT]
-> **TGP-only download.** This repository distributes `TargetingPodDisplay.dll` only. Observer is a separate, optional companion and is **not included**. The mod is build/test verified, but **not live-game, hardware or GPU verified**. Use an offline local cockpit and back up your existing files.
+> **TGP-only download:** one DLL for the targeting camera. Use a supported offline local cockpit. The configuration guide below covers activation, view controls, picture-in-picture and key bindings.
 
 ## What it does
 
@@ -65,14 +64,13 @@ The hash should match exactly. The filename alone does not identify a build.
 | Mod loader | Official **BepInEx 5.4.23.5 or 5.4.23.6**, including bundled **Harmony 2.9.0.0** |
 | Session | **Offline, local cockpit** |
 | Settings UI | Config file, or optional **ConfigurationManager** |
-| Observer | **Not required** for core TGP; separate companion for the shared menu and paired features |
 
-Exact game and loader identities are checked. Other/newer versions and modified dependency files are not automatically supported. Game, loader and companion binaries are not supplied here. See the [official BepInEx installation guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html) if you need the loader.
+Exact game and loader identities are checked. Other/newer versions and modified dependency files are not automatically supported. Game and loader binaries are not supplied here. See the [official BepInEx installation guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html) if you need the loader.
 
 ## Installation
 
 1. **Close Nuclear Option.** Back up an existing TGP DLL and its configuration.
-2. **Download [TargetingPodDisplay.dll](https://raw.githubusercontent.com/akwaa2545-gif/Controllable-Targeting-Pod/main/docs/downloads/TargetingPodDisplay.dll).** No ZIP extraction or Observer installation is needed for core TGP.
+2. **Download [TargetingPodDisplay.dll](https://raw.githubusercontent.com/akwaa2545-gif/Controllable-Targeting-Pod/main/docs/downloads/TargetingPodDisplay.dll).** No ZIP extraction is needed.
 3. **Copy the DLL** into your game's `BepInEx/plugins/TargetingPodDisplay/` folder. Create that subfolder if needed.
 4. **Keep only one copy.** Remove older duplicate TGP DLLs from other plugin subfolders. Do not remove unrelated mods.
 5. **Launch the game once.** Confirm **Targeting Pod Display 0.1.17** in `BepInEx/LogOutput.log`, then close the game before editing its config.
@@ -108,20 +106,69 @@ BepInEx/config/local.nuclearoption.targetingpoddisplay.cfg
 
 Optional ConfigurationManager exposes the same settings and binding controls. Configure while paused. Preserve existing configs when updating; do not replace them with examples.
 
-<details>
-<summary><strong>Already using Observer? Optional shared settings menu</strong></summary>
+## Settings panel tutorial
 
-The separately obtained, exact supported **Observer 0.5.7** binary can host a shared menu. In a supported offline cockpit, pause with **Esc**, then press **F8** (Observer's default Panel key). Choose **TGP → Settings** or **TGP → Bindings**.
+### 1. Open the settings interface
 
-Select an action, then **Bind**. Use **Key only**, or choose a special mouse/Ctrl/Shift/Alt input followed by **Alone** or **Combine**. Combine waits for an ordinary keyboard key. **Clear** unbinds; **Cancel** keeps the previous value. Release held controls before closing the menu.
+**Standalone TGP:** open your installed **ConfigurationManager** with its configured shortcut, then find **Targeting Pod Display**. ConfigurationManager is an optional settings tool, not included in the DLL download. Pause before changing bindings.
 
-F8 is **not** a standalone TGP key. Unknown or rebuilt Observer binaries can fail compatibility checks. The companion is not distributed in this repository.
+**No settings tool installed?** Use the config-file steps above. Every setting in the tables below has an equivalent entry in `local.nuclearoption.targetingpoddisplay.cfg`.
 
-<img src="docs/assets/settings-layout-preview.png" alt="Observer-hosted settings layout preview, explicitly labeled not an in-game screenshot" width="100%">
+**Shared-panel integration:** if an additional menu host is already installed, pause in a supported cockpit with **Esc**, open its configured Panel shortcut, then choose **TGP → Settings** or **TGP → Bindings**. The standalone DLL does **not** create the shared F8 menu shown below.
 
-*Layout preview, not an in-game screenshot. Source-based approximation; appearance may differ. Requires the optional Observer companion.*
+<img src="docs/assets/settings-layout-preview.png" alt="Settings-panel layout preview showing action selection, assigned keys and the special-input binding editor" width="100%">
 
-</details>
+**Settings and bindings layout preview.** Select an action in the list, check its assigned input, then edit it below. This shared-panel layout is an integration preview; standalone configuration uses ConfigurationManager or the config file.
+
+### 2. Enable the camera
+
+Under **General**, turn **Enabled** on. Leave **ReplaceCockpit** off for a first setup, so the native cockpit display remains unchanged while you learn fullscreen/PiP.
+
+| General setting | Default | When to change it |
+| :--- | :---: | :--- |
+| **Enabled** | Off | Turn on to activate TGP |
+| **ReplaceCockpit** | Off | Turn on to use the owned feed on a supported cockpit target pane |
+
+### 3. Set the viewing options
+
+Open **Presentation** in ConfigurationManager, or the corresponding controls on the shared **Settings** page.
+
+| Setting | Default | What it changes |
+| :--- | :---: | :--- |
+| **FullscreenMouseSlew** | On | Mouse-controlled scanning and no-target fullscreen entry |
+| **FullscreenWheelZoom** | On | Wheel zoom for the owned fullscreen camera |
+| **ScanGroundStabilization** | On | Hold valid terrain under the reticle in Scan; slew to move the held point |
+| **PiPEnabled** | Off | Show a passive right-center picture-in-picture feed |
+| **DisableCockpitScreen** | Off | Hide the supported cockpit target pane independently of PiP |
+| **DisableCockpitScreenWhenPiPEnabled** | Off | Hide that pane only while a current PiP frame is displayed |
+| **AftermathSeconds** | 3 | Show the last tracked position after a qualifying native kill notification; range 0–10 seconds, 0 disables |
+
+**PiP layout is fixed in this build:** right-center, aspect-fitted within 28% of screen width and 40% of screen height, 16 pixels from the right edge. There are no position, size or opacity sliders. Hiding the cockpit pane changes its drawing only, not the game's targeting logic.
+
+### 4. Bind fullscreen, scan and IR
+
+Start with **Fullscreen**, **ScanFollow** and **InfraredToggle**. Each defaults to **None**, so assign distinct inputs you have checked against the game and other mods.
+
+1. Select the action. In the shared layout, use **ACTION / ASSIGNED KEYS**, then **Bind**; in ConfigurationManager, use the setting's **Bind** control.
+2. Choose **Key only** for a keyboard key. Release held controls, then press your chosen key.
+3. For a supported mouse/Ctrl/Shift/Alt input, choose the special input, then **Alone** or **Combine**. With Alone, click **Save** and release all inputs before it commits. With Combine, release held inputs and press the ordinary keyboard key without holding the selected special input; during actual use, hold the special input with that key.
+4. Check the displayed assignment and any overlap warning. A shared button may also trigger native firing, panning or selection.
+5. **Clear** removes the binding. **Cancel** or **Escape** abandons capture and keeps the previous assignment.
+6. Close the panel, release held inputs, then resume. Shared-panel settings save immediately, with no overall Apply button. Changes save to the config; the camera may need an explicit re-entry after a change.
+
+Mouse0–Mouse6 support depends on what Unity receives from your hardware/OS. Wheel bindings, controller axes and Windows/Command/AltGr inputs are not added by this editor. Discrete special-input actions use a clean release gesture rather than acting on the initial press.
+
+### 5. Add PiP controls if you want them
+
+Enable **PiPEnabled**, then optionally bind **PiPToggle**, **PiPZoomIn** and **PiPZoomOut**. Hold a zoom key while the PiP is visible and a live feed is available. Holding both zoom keys cancels their zoom input. These shortcuts do not require ManualSensor or keyboard-sensor confirmation.
+
+PiP is hidden during direct fullscreen. If cockpit replacement is enabled, its owned view shares the PiP camera and zoom. Neither option forces an unavailable feed to appear.
+
+### 6. Test and save your setup
+
+Close the panel and release all held inputs. In a supported cockpit, try your Fullscreen key, scan with the mouse, zoom with the wheel and test ScanFollow with a selected target. Try IR and PiP only after the basic view works. If an action refuses, read its exact reason in `BepInEx/LogOutput.log` before changing more settings.
+
+**[Read the full settings walkthrough →](docs/guides/TGP_SETTINGS.md)** for keyboard scanning, config-file examples, display states and recovery steps.
 
 ## Controls
 
@@ -174,14 +221,21 @@ This extra confirmation is not required for mouse scanning, ScanFollow or option
 
 Normal manual Scan reaches up to **135° left or right of the aircraft nose**, with the rear **90° sector blocked**. Ground hold is a geometric terrain reference, not moving-object image tracking. SEL range/grid and weapon advice refer to native selected targets, not necessarily the reticle point.
 
-<details>
-<summary><strong>HUD illustration</strong></summary>
+## HUD gallery
 
-<p align="center"><img src="docs/assets/tgp-hud-illustration.png" alt="TGP HUD illustration on a plain background, showing crosshair, brackets and range information" width="600"></p>
+<table>
+<tr><th>TGP symbology</th><th>Selected-missile symbology</th></tr>
+<tr>
+<td><img src="docs/assets/tgp-hud-illustration.png" alt="TGP HUD illustration with crosshair, selection brackets, weapon name and range readout" width="100%"></td>
+<td><img src="docs/assets/missile-hud-illustration.png" alt="Selected-missile HUD illustration with a long split crosshair, three lower reference ticks and TARGET SELECTED label" width="100%"></td>
+</tr>
+<tr>
+<td>HUD illustration: compact targeting brackets, range, native weapon name and view information.</td>
+<td>HUD illustration: selected surface-missile presentation with long split crosshair and lower reference ticks. TARGET SELECTED is selection, not seeker lock; the ticks are viewing references, not a launch-range scale.</td>
+</tr>
+</table>
 
-*HUD illustration without a game scene. Not a gameplay screenshot.*
-
-</details>
+These two images isolate the display graphics on a plain background. The full gameplay photo and settings layout preview appear above.
 
 ## Troubleshooting
 
@@ -193,9 +247,9 @@ Check `Enabled = true`, your assigned Fullscreen key, the startup version and du
 </details>
 
 <details>
-<summary><strong>F8 does not open a menu</strong></summary>
+<summary><strong>I cannot find the settings panel</strong></summary>
 
-F8 belongs to the optional Observer companion. Standalone TGP uses its config or optional ConfigurationManager; no Observer DLL is included in this download.
+The TGP DLL alone does not provide the shared F8 menu. Open an installed ConfigurationManager through its configured shortcut, or edit the TGP config with the game closed. The shared-panel preview requires an additional menu host.
 
 </details>
 
@@ -220,11 +274,15 @@ Close the game first. Back up and replace the TGP DLL once; preserve its config.
 
 </details>
 
+## Release notes
+
+**Version 0.1.17 · Experimental.** Build and automated-test checks passed; live-game, hardware and GPU validation are still pending. The release targets the exact game/loader versions above. The DLL is unchanged by these documentation updates.
+
 ## Documentation & feedback
 
 - [Complete TGP reference](docs/guides/TARGETING_POD_DISPLAY.md)
 - [TGP live-game smoke checklist](docs/guides/TARGETING_POD_SMOKE_TEST.md)
-- [Optional Observer compatibility context](docs/guides/OBSERVER_0.5.7_RELEASE.md)
+- [Detailed settings-panel tutorial](docs/guides/TGP_SETTINGS.md)
 - [Report an issue](https://github.com/akwaa2545-gif/Controllable-Targeting-Pod/issues)
 
 Before posting logs publicly, check for personal paths or other private information. Include the exact version, warning and steps needed to reproduce the issue.
