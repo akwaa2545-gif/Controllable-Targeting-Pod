@@ -1,5 +1,7 @@
 # 0.1.17 runtime acceptance checklist — new changes not yet run
 
+> **Current public distribution: TGP-only.** Download only TargetingPodDisplay.dll. Observer, paired ZIP bundles and example configs are not included. References to supplied packages/configs in historical sections below describe earlier development packages. Let the mod generate its config or preserve your existing one; follow the repository README for current installation.
+
 For current binding, shared menu and overlap semantics, run [the 0.5.7 / 0.1.17 paired checklist](OBSERVER_0.5.7_SMOKE_TEST.md) first. Historical input/conflict expectations below are superseded by that checklist; retained camera/selection tests still apply.
 
 ## 0.1.10 Scan ground stabilization (runtime required)

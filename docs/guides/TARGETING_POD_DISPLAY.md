@@ -1,5 +1,7 @@
 # Targeting Pod Display 0.1.17 — paired Observer fullscreen/Hold release
 
+> **Current public distribution: TGP-only.** Download only TargetingPodDisplay.dll. Observer, paired ZIP bundles and example configs are not included. References to supplied packages/configs in historical sections below describe earlier development packages. Let the mod generate its config or preserve your existing one; follow the repository README for current installation.
+
 **Compile/test verified; live game/hardware/GPU validation remains required.** Separate DLL; Observer is optional for TGP operation. The shared independent menu requires paired Observer 0.5.7. Exact game0.34.6 references and supported BepInEx5.4.23.5/5.4.23.6 remain required. Offline local cockpit only.
 
 TGP 0.1.17 adds a verified same-camera contract for Observer Flight Hold in TGP fullscreen. With Auto Hold enabled, supported virtual-stick mouse movement is excluded from aircraft steering; keyboard/controller steering cancels Hold but leaves the TGP view open. TGP sensor slew/mouse capture remains unchanged. Auto Hold off preserves native map/TGP flight behavior. Direct Mouse Pitch/Roll/Yaw bindings remain unsupported and refuse/close safely. See the paired release guide.
