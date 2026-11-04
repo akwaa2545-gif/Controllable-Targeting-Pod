@@ -1,0 +1,3 @@
+88a3499bc65cefebf119c60c9a2f5b42cc7829bb46718de896850bb1d0791d2d  Observer.dll
+5e8ca78f9a11c90539eef3193a637d4e864ca1b62f39a0012fe193be0403f7b5  TargetingPodDisplay.dll
+979d4cc7f1fa604d5cb91f5d783244bbb1d8908ac5c3acebecc858e8476a6c88  Observer-0.5.7_TGP-0.1.17-runtime.zip

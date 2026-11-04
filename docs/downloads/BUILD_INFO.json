@@ -1,0 +1,183 @@
+{
+  "versions": {
+    "Observer": "0.5.7",
+    "TargetingPodDisplay": "0.1.17"
+  },
+  "commit": "66345378a70e5dcd50e88a9d1ae808f6f68401f5",
+  "dll_sha256": {
+    "Observer": "88a3499bc65cefebf119c60c9a2f5b42cc7829bb46718de896850bb1d0791d2d",
+    "TargetingPodDisplay": "5e8ca78f9a11c90539eef3193a637d4e864ca1b62f39a0012fe193be0403f7b5"
+  },
+  "verification": {
+    "Aftermath.Tests": {
+      "exit_code": 0,
+      "last_line": "Aftermath policy: 11 passed, 0 failed"
+    },
+    "FullscreenWarning.Tests": {
+      "exit_code": 0,
+      "last_line": "72 fullscreen warning assertions passed; authored GUI boundaries, no Unity rendering."
+    },
+    "HoldAirframe.Tests": {
+      "exit_code": 0,
+      "last_line": "51/51 passed"
+    },
+    "HostileIndicator.Tests": {
+      "exit_code": 0,
+      "last_line": "449 known-contact marker, selection bracket, friendly registry, identity, position and selection assertions passed."
+    },
+    "InfraredCamera.Tests": {
+      "exit_code": 0,
+      "last_line": "Infrared camera adapter tests passed. Authored boundary doubles; no Unity runtime rendering."
+    },
+    "InfraredMode.Tests": {
+      "exit_code": 0,
+      "last_line": "16 infrared mode assertions passed."
+    },
+    "KeyBindingCapture.Tests": {
+      "exit_code": 0,
+      "last_line": "Key binding capture: 110 passed, 0 failed"
+    },
+    "KnownModKeyConflict.Tests": {
+      "exit_code": 0,
+      "last_line": "28 passed; 0 failed"
+    },
+    "ManualScan.Tests": {
+      "exit_code": 0,
+      "last_line": "30 manual scan behavior assertions passed."
+    },
+    "ModalSurface.Tests": {
+      "exit_code": 0,
+      "last_line": "45 modal surface assertions; 0 failed."
+    },
+    "MouseAdapter.Tests": {
+      "exit_code": 0,
+      "last_line": "26 passed, 0 failed; 64 mouse adapter assertions"
+    },
+    "NativeHint.Tests": {
+      "exit_code": 0,
+      "last_line": "221 native hint assertions passed; production adapter, authored boundaries, no game assemblies loaded."
+    },
+    "NativeKeyboardConflict.Tests": {
+      "exit_code": 0,
+      "last_line": "Native raw-key adapters: 574/574 checks passed."
+    },
+    "NonMouseFlightInput.Tests": {
+      "exit_code": 0,
+      "last_line": "PASS NonMouseFlightInput: 84 assertions"
+    },
+    "Observer.Tests": {
+      "exit_code": 0,
+      "last_line": "174/174 passed; 0 failed"
+    },
+    "ObserverCompatibility.Tests": {
+      "exit_code": 0,
+      "last_line": "131 Observer paired-compatibility assertions passed; 0.5.1 through 0.5.7 exact pairs checked."
+    },
+    "ObserverDirectRender.Tests": {
+      "exit_code": 0,
+      "last_line": "PASS shared menu canvas fails closed"
+    },
+    "ObserverInputAdapters.Tests": {
+      "exit_code": 0,
+      "last_line": "89/89 observer input adapter cases passed; 0 failed"
+    },
+    "ObserverInputBoundary.Tests": {
+      "exit_code": 0,
+      "last_line": "18 Observer input-boundary/backup assertions passed."
+    },
+    "ObserverKeyBindings.Tests": {
+      "exit_code": 0,
+      "last_line": "146 passed; 0 failed"
+    },
+    "real-loader-persistence": {
+      "exit_code": 0,
+      "last_line": "PASS actual BepInEx 5.4.23.5: both mods preserve broad keyboard families, legacy numeric keys, readable chords, clear, unrelated settings and repaired invalid numeric keys."
+    },
+    "ObserverKeyCapture.Tests": {
+      "exit_code": 0,
+      "last_line": "Observer key binding capture: 105 passed, 0 failed"
+    },
+    "ObserverOverlay.Tests": {
+      "exit_code": 0,
+      "last_line": "537 message layout assertions passed."
+    },
+    "OptionalViewKeys.Tests": {
+      "exit_code": 0,
+      "last_line": "Optional view keys: 360 passed, 0 failed"
+    },
+    "PipScreenLease.Tests": {
+      "exit_code": 0,
+      "last_line": "49 cockpit visibility and target-pane lease assertions passed; Unity rendering/runtime behavior remains untested."
+    },
+    "PipZoom.Tests": {
+      "exit_code": 0,
+      "last_line": "25 PiP zoom policy/config assertions passed."
+    },
+    "Presentation.Tests": {
+      "exit_code": 0,
+      "last_line": "55913 presentation assertions passed; authored native boundaries, no game assemblies loaded."
+    },
+    "SensorViewMemory.Tests": {
+      "exit_code": 0,
+      "last_line": "293 sensor-view memory assertions passed; no game assemblies loaded."
+    },
+    "SettingsPanel.Tests": {
+      "exit_code": 0,
+      "last_line": "25 settings-panel, deferred-gesture and Layout assertions passed."
+    },
+    "TargetFollow.Tests": {
+      "exit_code": 0,
+      "last_line": "30 target follow policy assertions passed."
+    },
+    "TargetSelection.Tests": {
+      "exit_code": 0,
+      "last_line": "Target selection: 30 passed, 0 failed"
+    },
+    "TargetSelectionAdapter.Tests": {
+      "exit_code": 0,
+      "last_line": "Native selection adapter: 14 passed, 0 failed"
+    },
+    "TargetingPodDisplay.Tests": {
+      "exit_code": 0,
+      "last_line": "162 total targeting display assertions including chord generations."
+    },
+    "TgpChordPersistence.Tests": {
+      "exit_code": 0,
+      "last_line": "TGP companion persistence: legacy names/numbers, invalid values, seven mouse buttons, mixed modifiers, clear and unrelated settings passed."
+    },
+    "TgpSettingsBridge.Tests": {
+      "exit_code": 0,
+      "last_line": "35 TGP settings/hold-bridge assertions passed"
+    },
+    "WheelAdapter.Tests": {
+      "exit_code": 0,
+      "last_line": "34 wheel adapter assertions passed"
+    },
+    "WheelLease.Tests": {
+      "exit_code": 0,
+      "last_line": "17 wheel lease assertions passed"
+    },
+    "overlay-raster": {
+      "exit_code": 0,
+      "last_line": "PASS missing fields and invalid dimensions"
+    },
+    "python": {
+      "exit_code": 0,
+      "last_line": "OK"
+    },
+    "Observer-build": {
+      "exit_code": 0,
+      "last_line": "Time Elapsed 00:00:00.85"
+    },
+    "TargetingPodDisplay-build": {
+      "exit_code": 0,
+      "last_line": "Time Elapsed 00:00:01.73"
+    },
+    "diff-check": {
+      "exit_code": 0,
+      "last_line": ""
+    }
+  },
+  "runtime_validated": false,
+  "proprietary_binaries_included": false
+}
